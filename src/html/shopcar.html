@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../css/font/iconfont.css">
+    <link rel="stylesheet" href="../css/shopcar.css">
+</head>
+<body>
+<header class="header">
+
+</header>
+<div class="contain_box">
+    <div class="contain_left">
+        <!--<ul>-->
+            <!--<li>-->
+                 <!---->
+            <!--</li>-->
+        <!--</ul>-->
+         <table >
+             <tr class="tr_style">
+                 <td><input type="checkbox">全选</td>
+                 <td>商品名称</td>
+                 <td>单价(元)</td>
+                 <td>数量</td>
+                 <td>小计</td>
+                 <td>操作</td>
+             </tr>
+             <tbody class="tbody"></tbody>
+             <!--<tr class="goods_car_style">-->
+                 <!--<td><input type="checkbox"></td>-->
+                 <!--<td>-->
+                     <!--<img class="imgsize" src="/image/list/c9.png" alt="">-->
+                     <!--<div class="cont">-->
+                         <!--<span>欢迎来到野区 - 进化至上T恤</span>-->
+                         <!--<span>颜色:彩色</span>-->
+                         <!--<span>尺寸:S</span>-->
+                     <!--</div>-->
+                 <!--</td>-->
+                 <!--<td><div class="price">￥150</div></td>-->
+                 <!--<td><span>-</span><input type="text" value="1"><span>+</span></td>-->
+                 <!--<td>￥150</td>-->
+                 <!--<td><button>删除</button>-->
+                 <!--<button>收藏</button></td>-->
+             <!--</tr>-->
+             <tfoot>
+                <tr>
+                 <td><input type="checkbox">全选</td>
+                 <td>继续购物</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td> 清空购物车</td>
+                </tr>
+             </tfoot>
+         </table>
+        <div class="boutique">精品推荐</div>
+        <ul class="boutique_con">
+            <li>
+                <img src="../image/shopcar/2.png" alt="">
+                <p>盲僧李青 中型雕塑</p>
+                <span>￥430</span>
+                <div class="btn">加入购物车</div>
+            </li>
+            <li>
+                <img src="../image/shopcar/2.png" alt="">
+                <p>盲僧李青 中型雕塑</p>
+                <span>￥430</span>
+                <div class="btn">加入购物车</div>
+            </li>
+            <li>
+                <img src="../image/shopcar/2.png" alt="">
+                <p>盲僧李青 中型雕塑</p>
+                <span>￥430</span>
+                <div class="btn">加入购物车</div>
+            </li>
+
+            <li>
+                <img src="../image/shopcar/2.png" alt="">
+                <p>盲僧李青 中型雕塑</p>
+                <span>￥430</span>
+                <div class="btn">加入购物车</div>
+            </li>
+            <li>
+                <img src="../image/shopcar/2.png" alt="">
+                <p>盲僧李青 中型雕塑</p>
+                <span>￥430</span>
+                <div class="btn">加入购物车</div>
+            </li><li>
+            <img src="../image/shopcar/2.png" alt="">
+            <p>盲僧李青 中型雕塑</p>
+            <span>￥430</span>
+            <div class="btn">加入购物车</div>
+        </li>
+        </ul>
+    </div>
+    <div class="contain_right">
+        <h3><i class="iconfont">&#xe637;</i>我的购物车</h3>
+        <p>满199包邮</p>
+        <p>以满足 <span>更多人气商品</span></p>
+        <p>商品数量:&nbsp;2</p>
+        <p>商品金额 :<span>￥300.00</span> </p>
+        <div class="sure">去结算</div>
+        <div class="prom">
+            <div>承诺</div>
+            <div>
+                <span>7天无理由退款</span>
+                <span>100%官方正品</span>
+                <span>全场每单满199包邮</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer"></div>
+
+<script type="text/html" id="carlist">
+    {{each list item}}
+    <tr class="goods_car_style">
+    <td><input type="checkbox"></td>
+    <td>
+    <img class="imgsize" src="{{item.image}}" alt="">
+    <div class="cont">
+    <span>{{item.title}}</span>
+    <span>颜色:彩色</span>
+    <span>尺寸:{{item.size}}</span>
+    </div>
+    </td>
+    <td><div class="price">￥{{item.price}}</div></td>
+    <td><span class="reduce">-</span><input type="text" class="keyup" value="{{item.number}}"><span class="add">+</span></td>
+    <td>￥150</td>
+    <td><button>删除</button>
+    <button>收藏</button></td>
+    </tr>
+    {{/each}}
+</script>
+<script src="../lib/require.js" data-main="/js/shopcar.js"></script>
+</body>
+</html>

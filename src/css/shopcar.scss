@@ -1,0 +1,228 @@
+@import "reset.css";
+@import "Header";
+@import "footer";
+$color : #b7b7b7;
+.contain_box{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 35px;
+  overflow: hidden;
+  .contain_left{
+    width: 878px;
+    min-height: 210px;
+
+    float: left;
+    table{
+      width: 878px;
+      .tr_style{
+        height: 45px;
+        line-height: 45px;
+        font-size: 13px;
+        background: #efefef;
+        td{
+          text-align: center;
+
+        }
+
+      }
+      .goods_car_style{
+        height: 120px;
+        .imgsize{
+          width: 83px;
+          margin-left: 28px;
+        }
+        .cont{
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+          height: 60px;
+          justify-content: space-around;
+        }
+        td:nth-of-type(1){
+
+        }
+        td:nth-of-type(2){
+          width: 360px;
+          height:120px;
+          display: flex;
+          align-items: center;
+        }
+        td:nth-of-type(3){
+          width: 100px;
+          text-align: center;
+        }
+        td:nth-of-type(4){
+          width: 145px;
+          text-align: center;
+          span{
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+            line-height: 28px;
+            height: 28px;
+            background: #eeeeee;
+          }
+          input{
+            width: 50px;
+            height: 28px;
+            text-align: center;
+          }
+        }
+        td:nth-of-type(5){
+          width: 90px;
+          text-align: center;
+        }
+        td:nth-of-type(6){
+          width: 125px;
+          text-align: center;
+          button{
+            border: none;
+            background: white;
+            color: $color;
+            font-size: 12px;
+          }
+        }
+      }
+      tfoot tr{
+        height: 45px;
+        line-height: 45px;
+        background: white;
+        font-size: 12px;
+        td:nth-of-type(1){
+          display: flex;
+          align-items: center;
+        }
+      }
+      tfoot tr td:nth-of-type(2){
+        color: red;
+        text-align: center;
+      }
+      tr{
+        border-bottom: 1px solid $color;
+      }
+    }
+    .boutique{
+      width: 880px;
+      height: 44px;
+      background: #efefef;
+      margin-top: 40px;
+      line-height: 44px;
+      font-size: 14px;
+    }
+    .boutique_con{
+      width: 888px;
+      height: 215px;
+      font-size: 14px;
+      li{
+        float: left;
+        height: 215px;
+        width: 148px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        .btn{
+          width:80px;
+          height: 25px;
+          border: 1px solid red;
+          color: red;
+          text-align: center;
+          line-height: 25px;
+
+        }
+      }
+    }
+
+  }
+  .contain_right{
+    width: 278px;
+    height: 340px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    float: right;
+    border:5px solid #efefef;
+    h3{
+      background: #efefef;
+      height: 42px;
+      width: 275px;
+      position: relative;
+      left: -17px;
+      text-align: center;
+      line-height: 42px;
+      font-size: 16px;
+      i{
+        font-size: 17px !important;
+      }
+    }
+    p:nth-of-type(1){
+      color: red;
+      font-size: 12px;
+      margin-top: 18px;
+    }
+    p:nth-of-type(2){
+      color: white;
+      background: #018d73;
+      width: 150px;
+      height: 25px;
+      line-height: 25px;
+      font-size: 12px;
+      margin-top: 12px;
+      span{
+        background: #01aa8d;
+        height: 25px;
+        width: 96px;
+        float: right;
+        display: inline-block;
+      }
+    }
+    p:nth-of-type(3){
+      font-size: 14px;
+      margin-top: 25px;
+      margin-bottom: 12px;
+    }
+    p:nth-of-type(4){
+      font-size: 14px;
+      margin-bottom: 12px;
+      span{
+        color: red;
+      }
+    }
+    .sure{
+      background: red;
+      height: 48px;
+      text-align: center;
+      line-height: 48px;
+      font-size: 18px;
+      color: white;
+      margin-bottom: 22px;
+    }
+    .prom{
+      height: 64px;
+      width: 100%;
+      font-size: 13px;
+
+      color: #666666;
+
+      div:nth-of-type(1){
+        float: left;
+        width: 62px;
+        text-align: center;
+        line-height: 64px;
+      }
+      div:nth-of-type(2){
+        width: 180px;
+        height: 64px;
+        border-left: 1px solid $color;
+        float: right;
+        padding-left: 8px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+    }
+
+
+  }
+}

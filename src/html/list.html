@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情</title>
+    <link rel="stylesheet" href="../css/list.css">
+    <link rel="stylesheet" href="../css/font/iconfont.css">
+</head>
+<body>
+<header class="header">
+
+</header>
+   <div class="box">
+       <div class="aside_type">
+           <ul>
+               <li class="first">价格</li>
+               <li>100-300元</li>
+               <li>300元以上</li>
+           </ul>
+           <ol>
+               <li class="first">英雄</li>
+               <li> 上单</li>
+               <li>中单</li>
+               <li>ADC</li>
+               <li>打野</li>
+               <li>坦克</li>
+               <li>辅助</li>
+               <li>法师</li>
+               <li>刺客</li>
+               <li>射手</li>
+           </ol>
+       </div>
+       <div class="contain">
+           <div class="up">
+               <div class="people_num">
+                   <div class="c_box">人气 <span>v</span></div>
+                   <input type="checkbox">仅显示有货
+               </div>
+               <div class="page">
+                    <div >上一页</div>
+                   <span class="num">1</span>
+                   <div>下一页</div>
+               </div>
+           </div>
+           <div class="codes">
+               <ul class="goods">
+                   <li>
+                       <img src="/image/list/c2.png" alt="">
+                       <p>阿狸口袋T恤</p>
+                       <span>￥150.00</span>
+                   </li>
+                   <li>
+                       <img src="../image/list/c2.png" alt="">
+                       <p>阿狸口袋T恤</p>
+                       <span>￥150.00</span>
+                   </li>
+                   <li>
+                       <img src="../image/list/c2.png" alt="">
+                       <p>阿狸口袋T恤</p>
+                       <span>￥150.00</span>
+                   </li>
+                   <li>
+                       <img src="../image/list/c2.png" alt="">
+                       <p>阿狸口袋T恤</p>
+                       <span>￥150.00</span>
+                   </li>
+               </ul>
+           </div>
+       </div>
+   </div>
+<div class="footer"></div>
+   <script type="text/html" id="gooodlists">
+       {{each list item}}
+       <li data_id="{{item.id}}">
+           <img src="{{item.img1}}" alt="">
+           <p>{{item.title}}</p>
+           <span>￥{{item.price}}.00</span>
+       </li>
+       {{/each}}
+
+</script>
+   <script src="../lib/require.js" data-main="../js/list.js"></script>
+</body>
+</html>

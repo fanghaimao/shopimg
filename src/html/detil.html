@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="../css/detil.css">
+</head>
+<body>
+<header class="header">
+
+</header>
+<div class="nav">
+   <ul class="box1">
+       <li>商城首页</li>
+       <i> > </i>
+       <li>男女服饰</li>
+       <i> > </i>
+       <li>T恤</li>
+       <i> > </i>
+       <li>欢迎来到野区 - 抓到魔沼蛙T恤</li>
+   </ul>
+</div>
+<div class="contain"></div>
+<!--<div class="detil_main">-->
+     <!--<div class="detil_main_up">-->
+         <!--<div class="img_detil">-->
+             <!--<img src="/image/detil/img1.png" alt="">-->
+         <!--</div>-->
+         <!--<div class="word_con">-->
+             <!--<h3>欢迎来到野区 - 今晚一起狩猎T恤</h3>-->
+             <!--<div class="price"><span class="now_price">现价</span>￥<b>150.00</b></div>-->
+             <!--<div class="sale"> <span>最近销量&nbsp;157</span><span>累计评价&nbsp;3</span><span>累计收藏宝贝&nbsp;16</span></div>-->
+             <!--<div class="color">颜色: <div>彩色</div></div>-->
+             <!--<div class="size">尺码:<div>S</div><div>M</div><div>L</div><div>XL</div><div>XXL</div></div>-->
+             <!--<div class="num">-->
+                 <!--<span>数量:</span>-->
+                 <!--<div class="num_box">-->
+                     <!--<div class="dis">-</div>-->
+                     <!--<input type="text" value="1">-->
+                     <!--<div class="add">+</div>-->
+                 <!--</div>-->
+                 <!--<div>(还剩30件)</div>-->
+             <!--</div>-->
+         <!--</div>-->
+     <!--</div>-->
+     <!--<div class="shopcar">-->
+         <!--<div class="becomebig"> 点击放大</div>-->
+
+             <!--<div class="goodscar">-->
+                 <!--<div class="immediately">-->
+                     <!--立即购买-->
+                 <!--</div>-->
+                 <!--<div class="addcar">-->
+                     <!--<i class="iconfont">&#xe637;</i>加入购物车-->
+                 <!--</div>-->
+             <!--</div>-->
+         <!--<div class="baby">收藏宝贝</div>-->
+     <!--</div>-->
+    <!--<div class="no_why">-->
+        <!--<div>7天无理由退换</div>-->
+        <!--<div>100%官方正品</div>-->
+        <!--<div>全场每单满199包邮</div>-->
+    <!--</div>-->
+    <!--<div class="information">-->
+        <!--<div>商品详情</div>-->
+        <!--<div>用户点评</div>-->
+        <!--<div>售后服务</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div class="imgs">-->
+    <!--<p><img src="/image/detil/0.jpg" alt=""></p>-->
+    <!--<p><img src="/image/detil/0%20(1).jpg" alt=""></p>-->
+    <!--<p><img src="/image/detil/0%20(2).jpg" alt=""></p>-->
+    <!--<p><img src="/image/detil/0%20(3).jpg" alt=""></p>-->
+    <!--<p><img src="/image/detil/0%20(4).jpg" alt=""></p>-->
+    <!--<p><img src="/image/detil/0%20(5).jpg" alt=""></p>-->
+    <!--<p><img src="/image/detil/0%20(6).jpg" alt=""></p>-->
+    <!--<p><img src="/image/detil/0%20(7).jpg" alt=""></p>-->
+    <!--<p><img src="/image/detil/0%20(8).jpg" alt=""></p>-->
+    <!--<p><img src="/image/detil/0%20(9).jpg" alt=""></p>-->
+    <!--<p><img src="/image/detil/0%20(10).jpg" alt=""></p>-->
+    <!--<p><img src="/image/detil/0%20(13).jpg" alt=""></p>-->
+    <!--<p><img src="/image/detil/0%20(14).jpg" alt=""></p>-->
+
+<!--</div>-->
+<script type="text/html" id="box">
+    <div class="detil_main">
+        <div class="detil_main_up">
+            <div class="img_detil">
+                <img src="{{img1}}" alt="">
+            </div>
+            <div class="word_con">
+                <h3>{{title}}</h3>
+                <div class="price"><span class="now_price">现价</span>￥<b>{{price}}.00</b></div>
+                <div class="sale"> <span>最近销量&nbsp;{{sale}}</span><span>累计评价&nbsp;{{evaluation}}</span><span>累计收藏宝贝&nbsp;{{baby}}</span></div>
+                <div class="color">颜色: <div>彩色</div></div>
+                <div class="size">尺码:<div>S</div><div>M</div><div>L</div><div>XL</div><div>XXL</div></div>
+                <div class="num">
+                    <span>数量:</span>
+                    <div class="num_box">
+                        <div class="dis">-</div>
+                        <input type="text" class="data_num" value="1">
+                        <div class="add">+</div>
+                    </div>
+                    <div>(还剩{{sxsl}}件)</div>
+                </div>
+            </div>
+        </div>
+        <div class="shopcar">
+            <div class="becomebig"> 点击放大</div>
+
+            <div class="goodscar">
+                <div class="immediately">
+                    立即购买
+                </div>
+                <div class="addcar">
+                    <i class="iconfont">&#xe637;</i>加入购物车
+                </div>
+                <div class="incar">
+                    <img src="../image/shopcar/111.png" alt="">
+                    <div class="car"><a href="shopcar.html">去购物车</a></div>
+                </div>
+            </div>
+            <div class="baby">收藏宝贝</div>
+        </div>
+        <div class="no_why">
+            <div>7天无理由退换</div>
+            <div>100%官方正品</div>
+            <div>全场每单满199包邮</div>
+        </div>
+        <div class="information">
+            <div>商品详情</div>
+            <div>用户点评</div>
+            <div>售后服务</div>
+        </div>
+    </div>
+    <div class="imgs">
+        <p><img src="{{bg[0]}}" alt=""></p>
+        <p><img src="{{bg[1]}}" alt=""></p>
+        <p><img src="{{bg[2]}}" alt=""></p>
+        <p><img src="{{bg[3]}}" alt=""></p>
+        <p><img src="{{bg[4]}}" alt=""></p>
+        <p><img src="{{bg[5]}}" alt=""></p>
+        <p><img src="{{bg[6]}}" alt=""></p>
+        <p><img src="{{bg[7]}}" alt=""></p>
+        <p><img src="/image/detil/0%20(9).jpg" alt=""></p>
+        <p><img src="/image/detil/0%20(10).jpg" alt=""></p>
+        <p><img src="/image/detil/0%20(13).jpg" alt=""></p>
+        <p><img src="/image/detil/0%20(14).jpg" alt=""></p>
+
+    </div>
+
+</script>
+<script src="../lib/require.js" data-main="../js/detil.js"></script>
+</body>
+</html>
