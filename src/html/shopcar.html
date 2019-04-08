@@ -17,16 +17,22 @@
                  <!---->
             <!--</li>-->
         <!--</ul>-->
-         <table >
+        <div class="showhide">
+            你的购物车还没有商品，快去 <span class="data_in_index">逛逛吧</span>
+        </div>
+         <table class="contain">
              <tr class="tr_style">
-                 <td><input type="checkbox">全选</td>
+                 <td><input class="check_all" type="checkbox" checked>全选</td>
                  <td>商品名称</td>
                  <td>单价(元)</td>
                  <td>数量</td>
                  <td>小计</td>
                  <td>操作</td>
              </tr>
-             <tbody class="tbody"></tbody>
+             <tbody class="tbody">
+
+             </tbody>
+
              <!--<tr class="goods_car_style">-->
                  <!--<td><input type="checkbox"></td>-->
                  <!--<td>-->
@@ -45,12 +51,12 @@
              <!--</tr>-->
              <tfoot>
                 <tr>
-                 <td><input type="checkbox">全选</td>
-                 <td>继续购物</td>
+                 <td></td>
+                 <td class="continue_shoping">继续购物</td>
                  <td></td>
                  <td></td>
                  <td></td>
-                 <td> 清空购物车</td>
+                 <td class="clear_goods"> 清空购物车</td>
                 </tr>
              </tfoot>
          </table>
@@ -96,10 +102,11 @@
     </div>
     <div class="contain_right">
         <h3><i class="iconfont">&#xe637;</i>我的购物车</h3>
-        <p>满199包邮</p>
-        <p>以满足 <span>更多人气商品</span></p>
-        <p>商品数量:&nbsp;2</p>
-        <p>商品金额 :<span>￥300.00</span> </p>
+        <p>满199包邮 <span class="yc" style="color: black">你还未满足包邮条件</span></p>
+        <p class="xs">以满足 <span>更多人气商品</span></p>
+        <div class="yc nomoreP">未满足 <span>更多人气商品</span></div>
+        <p>商品数量:&nbsp;<span class="goods_number">2</span></p>
+        <p>商品金额 : <span>￥</span><span class="goods_all_price">300.00</span> </p>
         <div class="sure">去结算</div>
         <div class="prom">
             <div>承诺</div>
@@ -115,7 +122,7 @@
 
 <script type="text/html" id="carlist">
     {{each list item}}
-    <tr class="goods_car_style">
+    <tr class="goods_car_style" data_id="{{item.id}}">
     <td><input type="checkbox"></td>
     <td>
     <img class="imgsize" src="{{item.image}}" alt="">
@@ -128,7 +135,7 @@
     <td><div class="price">￥{{item.price}}</div></td>
     <td><span class="reduce">-</span><input type="text" class="keyup" value="{{item.number}}"><span class="add">+</span></td>
     <td>￥150</td>
-    <td><button>删除</button>
+    <td><button class="del">删除</button>
     <button>收藏</button></td>
     </tr>
     {{/each}}

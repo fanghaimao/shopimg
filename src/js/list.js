@@ -9,11 +9,11 @@ require(["config"],function () {
          },
          getData(){
              var _this = this;
-           let type = location.search.slice(6);
+             this.type = location.search.slice(6);
              $.ajax({
                  type: "get",
                  url: "http://localhost/php/getdata.php",
-                 data: "type="+type,
+                 data: "type="+this.type,
                  success: function(msg){
                    var msg = JSON.parse(msg);
                    var html = art_template("gooodlists",{list: msg.res_list.data});

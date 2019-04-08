@@ -10,8 +10,18 @@ $color : #b7b7b7;
   .contain_left{
     width: 878px;
     min-height: 210px;
-
     float: left;
+    .showhide{
+      width: 880px;
+      height: 310px;
+      background: $color;
+      text-align: center;
+      line-height: 310px;
+      span{
+        color: red;
+        cursor: pointer;
+      }
+    }
     table{
       width: 878px;
       .tr_style{
@@ -59,6 +69,7 @@ $color : #b7b7b7;
             width: 20px;
             text-align: center;
             line-height: 28px;
+            cursor: pointer;
             height: 28px;
             background: #eeeeee;
           }
@@ -92,10 +103,14 @@ $color : #b7b7b7;
           display: flex;
           align-items: center;
         }
+        .clear_goods{
+          cursor: pointer;
+        }
       }
       tfoot tr td:nth-of-type(2){
         color: red;
         text-align: center;
+        cursor: pointer;
       }
       tr{
         border-bottom: 1px solid $color;
@@ -170,6 +185,22 @@ $color : #b7b7b7;
       margin-top: 12px;
       span{
         background: #01aa8d;
+        height: 25px;
+        width: 96px;
+        float: right;
+        display: inline-block;
+      }
+    }
+    .nomoreP{
+      color: white;
+      background: #018d73;
+      width: 150px;
+      height: 25px;
+      line-height: 25px;
+      font-size: 12px;
+      margin-top: 12px;
+      span{
+        background: red;
         height: 25px;
         width: 96px;
         float: right;

@@ -5,6 +5,7 @@ define(["jquery"],function ($) {
                  this.show();
                  this.getSe();
                  this.sign_in();
+                 this.num();
              });
          }
          init() {
@@ -37,6 +38,13 @@ define(["jquery"],function ($) {
                  sessionStorage.clear();
                  this.getSe()
              })
+         }
+         num(){
+             var number = localStorage.getItem("num");
+             if(number == undefined){
+                 number =0;
+             }
+             $(".num").html(number);
          }
          /*//鼠标移进，移出下面类容的显示的方法
          //{
