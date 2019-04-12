@@ -9,14 +9,12 @@ require.config({
         "Swiper": "lib/swiper/js/swiper",
         "art_template" : "lib/art-template/template-web",
         "imgbig":"lib/big/fangda/js/mzp-packed",
-        "zoom" : "lib/jquery-plugins/jquery.elevateZoom-3.0.8.min"
-
+        "zoom" : "lib/jquery-plugins/jquery.elevateZoom-3.0.8.min",
+        "fly" : "lib/fly/dist/jquery.fly.min"
     },
     shim : {
         "zoom" : {
             deps: ["jquery"]
         }
     }
-
-
 })

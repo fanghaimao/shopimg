@@ -5,6 +5,7 @@ class Sign_in {
     init(){
        this.getDom();
        this.click();
+       this.scroll();
     }
     getDom(){
         this.username = document.querySelector(".username");
@@ -37,6 +38,26 @@ class Sign_in {
                 phone:this.phone.value
             }
            return myFunction.ajaxPromise("post",this.obj,'http://localhost/php/sign_in.php');
+    }
+    //轮播
+    scroll(){
+        this.index = 0;
+        this.last = 0;
+        this.aimg = document.querySelector(".bg").querySelectorAll("img");
+        setInterval(()=>{
+            for(let i = 0 ; i < this.aimg.length-1 ; i++){
+                console.log(   this.aimg[this.index],this.aimg[this.last]);
+                console.log(this.index,this.last)
+                this.aimg[this.last].classList.remove("ac");
+                this.aimg[this.index].classList.add("ac");
+                console.log(   this.aimg[this.index],this.aimg[this.last]);
+                this.last = this.index ;
+                this.index++;
+                if(this.index > this.aimg.length-1){
+                    this.index = 0;
+                }
+            }
+        },5000)
     }
 }
 new Sign_in();

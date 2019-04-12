@@ -8,7 +8,6 @@
 </head>
 <body>
 <header class="header">
-
 </header>
    <div class="box">
        <div class="aside_type">
@@ -68,16 +67,18 @@
            </div>
        </div>
    </div>
+<div class="logoIn"></div>
 <div class="footer"></div>
    <script type="text/html" id="gooodlists">
        {{each list item}}
-       <li data_id="{{item.id}}">
-           <img src="{{item.img1}}" alt="">
+       <li class="liw" data_id="{{item.id}}" data_c = "{{item.class}}">
+           <img class="img1" src="{{item.img1}}" alt="">
+           <img class="img2" src="{{item.img2}}" alt="">
+
            <p>{{item.title}}</p>
            <span>￥{{item.price}}.00</span>
        </li>
        {{/each}}
-
 </script>
    <script src="../lib/require.js" data-main="../js/list.js"></script>
 </body>

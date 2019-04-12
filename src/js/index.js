@@ -5,27 +5,9 @@ require(["config"],function () {
                     this.init()
                 }
                 init(){
-                    this.getDom();
-                    this.showhide();
                     this.lb();
-                    this.hasSessionStorage();
                     this.getData();
                     this.listGoods();
-                }
-                getDom(){
-                    this.logoIn = $(".logoIn");
-                }
-                //显示登录的显示隐藏
-                showhide(){
-                    this.logoIn.toggle();
-                }
-                //如果是注册过来的，让登录显示
-                hasSessionStorage(){
-                    this.SessionStorage = sessionStorage.getItem("logo_in");
-                    // console.log(this.cookie);
-                    if(this.SessionStorage){
-                        this.showhide();
-                    }
                 }
                 //轮播
                 lb(){
@@ -72,17 +54,6 @@ require(["config"],function () {
                        jqdom[i].onclick = function(e){
                          var type = e.srcElement.parentElement.className.slice(4);
                            location.href = "/html/list.html?type="+type
-                          /* $.ajax({
-                               type: "get",
-                               url: "http://rap2api.taobao.org/app/mock/data/897257",
-                               data: "type="+type,
-                               success: function(msg){
-                                   console.log(msg)
-                                   if(msg.res_code==1){
-                                       location.href = "/html/list.html?";
-                                   }
-                               }
-                           });*/
                        }
                    }
                 }
