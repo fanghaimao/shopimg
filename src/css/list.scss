@@ -84,9 +84,14 @@
           flex-direction: column;
           align-items: center;
           float: left;
-          img{
+          .img1{
             width: 288px;
             height: 313px;
+          }
+          .img2{
+            width: 288px;
+            height: 313px;
+            display: none;
           }
         }
         li p{

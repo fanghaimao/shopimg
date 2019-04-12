@@ -1,5 +1,5 @@
 require(["config"],function () {
-    require(["jquery","art_template","Header","Footer"],function ($,art_template,header){
+    require(["jquery","art_template","Header","Logo_in","Footer"],function ($,art_template,header){
           class Shopcar{
               constructor(){
                   this.init();
@@ -9,7 +9,6 @@ require(["config"],function () {
                   this.events();
                   this.allcheck();
                   this.clac();
-
               }
               //页面中的事件
               events(){
@@ -28,6 +27,7 @@ require(["config"],function () {
                           this.local[this.getObjIndexInArr(this.local,id).index].number = num;
                           localStorage.setItem("goods",JSON.stringify(this.local));
                           this.clac();
+                          header.num();
                       }
                       if(e.toElement.className == "add"){
                           var id = e.toElement.parentElement.parentElement.getAttribute("data_id");
@@ -38,6 +38,7 @@ require(["config"],function () {
                           this.local[this.getObjIndexInArr(this.local,id).index].number = num;
                           localStorage.setItem("goods",JSON.stringify(this.local));
                           this.clac();
+                          header.num();
                       }
                       if(e.toElement.className == "del"){
                           var id = e.toElement.parentElement.parentElement.getAttribute("data_id");
@@ -45,6 +46,7 @@ require(["config"],function () {
                           this.local.splice([this.getObjIndexInArr(this.local,id).index],1);
                           localStorage.setItem("goods",JSON.stringify(this.local));
                           this.clac();
+                          header.num();
                       }
                   })
                    //input框失去焦点
@@ -54,6 +56,7 @@ require(["config"],function () {
                       this.local[this.getObjIndexInArr(this.local,id).index].number = num;
                       localStorage.setItem("goods",JSON.stringify(this.local));
                       this.clac();
+                      header.num();
                   })
                   //继续购物
                   $(".continue_shoping").unbind("click").one("click",function () {
@@ -76,12 +79,13 @@ require(["config"],function () {
                           }
                       }
                       this.clac();
-
                   })
                   //清空购物车
                   $(".clear_goods").on('click',()=>{
                       if(confirm("确定要清空购物车吗")){
                           localStorage.clear("goods");
+                          header.num();
+                          this.getlocal();
                       }
                   })
               }
@@ -156,14 +160,15 @@ require(["config"],function () {
               for(let i = 0 ;i < check_num.length ; i++){
                   let num = check_num[i].parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[1].value;
                   let price = check_num[i].parentElement.nextElementSibling.nextElementSibling.children[0].innerHTML.slice(1);
+                  let small_all = check_num[i].parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling;
+                       small_all.innerHTML = num *price;
                   this.sun_all = this.sun_all + num * price ;
                   this.goods_number_all = this.goods_number_all + Number(num);
                 }
-
               this.operationDom();
-              if(localStorage.getItem("num") != this.goods_number_all){
+             /* if(localStorage.getItem("num") != this.goods_number_all){
                       location.reload();
-                  }
+                  }*/
               localStorage.setItem("num",this.goods_number_all);
               }
           }

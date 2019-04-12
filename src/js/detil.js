@@ -1,5 +1,5 @@
 require(["config"], function () {
-    require(["jquery", "Header", "art_template", "zoom", "imgbig"], function ($, header, art_template,zoom) {
+    require(["jquery","Logo_in", "Header", "art_template", "zoom","", "imgbig"], function ($,Logo_in, header, art_template,zoom) {
         class Detil {
             constructor() {
                 this.number = 1;
@@ -8,30 +8,35 @@ require(["config"], function () {
 
             init() {
                 this.getData();
-                // console.log(imgbig)
             }
 
             getData() {
-                this.discription = location.search.slice(13);
+                this.discription = location.search.slice(1);
                 $.ajax({
                     type: "get",
                     url: "http://localhost/php/xiangqing.php",
-                    data: "discription=" + this.discription,
+                    data: this.discription ,
                     success: (msg) => {
                         var msg = JSON.parse(msg);
+                        console.log(msg)
                         this.id = msg.res_list.data[0].id;
                         this.title = msg.res_list.data[0].title;
                         this.image = msg.res_list.data[0].img1;
                         this.price = msg.res_list.data[0].price;
                         var imgs = msg.res_list.data[0].bg;
-                        imgs = imgs.split(",");
-                        msg.res_list.data[0].bg = imgs;
+                        if(imgs){
+                            imgs = imgs.split(",");
+                            msg.res_list.data[0].bg = imgs;
+                        }else {
+                            msg.res_list.data[0].bg = "";
+                        }
                         var html = art_template("box", {...msg.res_list.data[0]});
                         $(".contain").html(html);
                         // this.fangda();
                         this.buynum();
                         this.addCar();
                         this.zoom();
+                        //this.fly();
                     }
                 })
             }
@@ -49,6 +54,7 @@ require(["config"], function () {
                 $(".add").on("click", () => {
                     this.number = Number($(".data_num").val()) + 1;
                     $(".data_num").val(this.number);
+                    console.log(this.number);
                 })
                 $(".data_num").on("blur", () => {
                     this.number = Number($(".data_num").val());
@@ -70,19 +76,20 @@ require(["config"], function () {
             addCar() {
                 this.sizecolor();
                 //获取选择的衣服的尺寸大小
+                this.obj = {
+                    id: this.id,
+                    title: this.title,
+                    image: this.image,
+                    price: this.price,
+                    size: this.size,
+                    number: this.number,
+                    index: this.index,
+                    type: this.discription
+                }
                 this.size = "";
                 $(".size").on("click", "div", (e) => {
                     this.size = e.currentTarget.innerHTML;
-                    this.obj = {
-                        id: this.id,
-                        title: this.title,
-                        image: this.image,
-                        price: this.price,
-                        size: this.size,
-                        number: this.number,
-                        index: this.index,
-                        type: this.discription
-                    }
+                    this.obj.size = this.size ;
                 })
 
                 $(".addcar").on("click", () => {
@@ -92,6 +99,8 @@ require(["config"], function () {
                     } else {
                         var hasgoods = localStorage.getItem("goods");
                         if (hasgoods) {
+                            this.obj.number = this.number;
+                            console.log(this.obj);
                             var arr1 = JSON.parse(hasgoods);
                             var i = 0;
                             if (arr1.some(function (item, index) {
@@ -107,6 +116,8 @@ require(["config"], function () {
                             $(".incar").show();
 
                         } else {
+                           this.obj.number = this.number;
+                           console.log(this.obj);
                             var arr = [this.obj];
                             localStorage.setItem("goods", JSON.stringify(arr));
                             $(".incar").show();
@@ -114,7 +125,29 @@ require(["config"], function () {
                     }
                 })
             }
-
+            //fly
+          /*  fly(){
+                jQuery(function($) {
+                    $('#fly').fly({
+                        start:{
+                            left: 11,  //开始位置（必填）#fly元素会被设置成position: fixed
+                            top: 600,  //开始位置（必填）
+                        },
+                        end:{
+                            left: 500, //结束位置（必填）
+                            top: 130,  //结束位置（必填）
+                            width: 100, //结束时高度
+                            height: 100, //结束时高度
+                        },
+                        autoPlay: false, //是否直接运动,默认true
+                        speed: 1.1, //越大越快，默认1.2
+                        vertex_Rtop:100, //运动轨迹最高点top值，默认20
+                        onEnd: function(){} //结束回调
+                });
+                    $('#fly').play(); //autoPlay: false后，手动调用运动
+                    $('#fly').destroy(); //移除dom
+                });
+            }*/
             /*//放大镜插件
             fangda() {
                 function jQuery1(e) {

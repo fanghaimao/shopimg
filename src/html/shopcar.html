@@ -8,15 +8,9 @@
 </head>
 <body>
 <header class="header">
-
 </header>
 <div class="contain_box">
     <div class="contain_left">
-        <!--<ul>-->
-            <!--<li>-->
-                 <!---->
-            <!--</li>-->
-        <!--</ul>-->
         <div class="showhide">
             你的购物车还没有商品，快去 <span class="data_in_index">逛逛吧</span>
         </div>
@@ -30,25 +24,7 @@
                  <td>操作</td>
              </tr>
              <tbody class="tbody">
-
              </tbody>
-
-             <!--<tr class="goods_car_style">-->
-                 <!--<td><input type="checkbox"></td>-->
-                 <!--<td>-->
-                     <!--<img class="imgsize" src="/image/list/c9.png" alt="">-->
-                     <!--<div class="cont">-->
-                         <!--<span>欢迎来到野区 - 进化至上T恤</span>-->
-                         <!--<span>颜色:彩色</span>-->
-                         <!--<span>尺寸:S</span>-->
-                     <!--</div>-->
-                 <!--</td>-->
-                 <!--<td><div class="price">￥150</div></td>-->
-                 <!--<td><span>-</span><input type="text" value="1"><span>+</span></td>-->
-                 <!--<td>￥150</td>-->
-                 <!--<td><button>删除</button>-->
-                 <!--<button>收藏</button></td>-->
-             <!--</tr>-->
              <tfoot>
                 <tr>
                  <td></td>
@@ -118,6 +94,7 @@
         </div>
     </div>
 </div>
+<div class="logoIn"></div>
 <div class="footer"></div>
 
 <script type="text/html" id="carlist">
@@ -134,7 +111,7 @@
     </td>
     <td><div class="price">￥{{item.price}}</div></td>
     <td><span class="reduce">-</span><input type="text" class="keyup" value="{{item.number}}"><span class="add">+</span></td>
-    <td>￥150</td>
+    <td class="small_all">{{item.price * item.number}}</td>
     <td><button class="del">删除</button>
     <button>收藏</button></td>
     </tr>

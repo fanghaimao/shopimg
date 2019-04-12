@@ -11,7 +11,7 @@ define(["jquery","Header"],function ($,header) {
         }
         init(){
             return new Promise(function (resolve, reject) {
-                $(".logoIn").load("html/modul/logo_in.html",function () {
+                $(".logoIn").load("/html/modul/logo_in.html",function () {
                     resolve();
                 });
             })
@@ -67,10 +67,14 @@ define(["jquery","Header"],function ($,header) {
             $(".data_qq").on("click",function () {
                 $(".data_wx").removeClass("ac");
                 $(".data_qq").addClass("ac");
+                $(".sign_in_show").show();
+                $(".sign_in_hide").hide();
             })
             $(".data_wx").on("click",function () {
                 $(".data_wx").addClass("ac");
                 $(".data_qq").removeClass("ac");
+                $(".sign_in_show").hide();
+                $(".sign_in_hide").show();
             })
         }
     }
