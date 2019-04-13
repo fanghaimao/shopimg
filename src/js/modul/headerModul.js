@@ -57,6 +57,9 @@ define(["jquery"],function ($) {
              $(".data_b").on("click",function () {
                  location.href = "/html/lpl.html";
              })
+             $(".mycar").on("click",function () {
+                 location.href = "/html/shopcar.html";
+             })
          }
          show(){
              $(".lo_in").on("click",function (e) {
