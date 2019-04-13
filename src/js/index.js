@@ -8,7 +8,9 @@ require(["config"],function () {
                     this.lb();
                     this.getData();
                     this.listGoods();
+
                 }
+
                 //轮播
                 lb(){
                     var mySwiper = new Swiper ('.swiper-container', {
